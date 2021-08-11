@@ -1,30 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+  import { notification } from 'ant-design-vue';
+  import 'ant-design-vue/lib/notification/style/index.css';
+  import { defineComponent, onMounted } from 'vue';
+  export default defineComponent({
+    name: 'App',
+    setup() {
+      let openMessage = () => {
+        notification.success({
+          message: '欢迎！',
+          description: `欢迎使用${process.env.VUE_APP_WEBNAME}`
+        });
+      };
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+      onMounted(() => {
+        openMessage();
+      });
     }
+  });
+</script>
+
+<style lang="scss">
+  html,
+  body,
+  #app {
+    height: 100%;
   }
-}
 </style>
