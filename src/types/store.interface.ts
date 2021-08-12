@@ -7,6 +7,7 @@ export declare interface Getters {
   token?: unknown;
   avatar?: unknown;
   name?: unknown;
+  nickName?: unknown;
   introduction?: unknown;
   roles?: unknown;
   permissions?: unknown;
@@ -41,6 +42,7 @@ declare interface User {
   introduction?: unknown;
   roles?: unknown;
   permissions?: unknown;
+  nickName?: string;
 }
 
 declare interface Permission {

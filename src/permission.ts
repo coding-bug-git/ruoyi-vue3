@@ -31,7 +31,8 @@ router.beforeEach(
               store.dispatch('GenerateRoutes').then((accessRoutes) => {
                 // 根据roles权限生成可访问的路由表
                 accessRoutes.forEach((item: RouteRecordRaw) => {
-                  if (item.path == '*') return;
+                  if (item.path == '*' || item.path == 'http://ruoyi.vip')
+                    return;
                   router.addRoute(item); // 动态添加可访问路由表
                 });
 

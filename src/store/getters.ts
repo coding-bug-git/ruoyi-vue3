@@ -9,6 +9,7 @@ const getters: Getters = {
   token: (state: GettersState) => state.user?.token,
   avatar: (state: GettersState) => state.user?.avatar,
   name: (state: GettersState) => state.user?.name,
+  nickName: (state: GettersState) => state.user?.nickName,
   introduction: (state: GettersState) => state.user?.introduction,
   roles: (state: GettersState) => state.user?.roles,
   permissions: (state: GettersState) => state.user?.permissions,

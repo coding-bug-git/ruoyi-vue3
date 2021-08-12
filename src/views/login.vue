@@ -30,17 +30,17 @@
           </a-form-item>
 
           <a-form-item ref="password" name="password">
-            <a-input
+            <a-input-password
               v-model:value.trim="loginForm.password"
               placeholder="密码"
-              type="password"
-              size="large"
               @keyup.enter="handleLogin"
+              size="large"
+              allow-clear
             >
               <template #prefix>
                 <LockOutlined type="user" />
               </template>
-            </a-input>
+            </a-input-password>
           </a-form-item>
 
           <a-form-item ref="code" name="code">

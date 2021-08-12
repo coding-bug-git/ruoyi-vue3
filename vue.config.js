@@ -13,7 +13,7 @@ module.exports = {
     open: true,
     proxy: {
       [process.env.VUE_APP_BASEURL]: {
-        target: 'http://120.25.120.118:58080',
+        target: 'http://vue.ruoyi.vip/prod-api',
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASEURL]: ''
