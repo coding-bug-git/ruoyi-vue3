@@ -51,6 +51,10 @@ export const constantRoutes: CustomeRouter[] = [
     ]
   },
   {
+    path: '/:catchAll(.*)',
+    component: () => import('@/views/error/404.vue')
+  },
+  {
     path: '/redirect',
     component: Layout,
     hidden: true,
@@ -134,7 +138,7 @@ export const constantRoutes: CustomeRouter[] = [
 ];
 
 const router = createRouter({
-  routes: constantRoutes as unknown as RouteRecordRaw[],
+  routes: constantRoutes as RouteRecordRaw[],
   history: createWebHashHistory(),
   scrollBehavior: () => {
     return { top: 0 };
